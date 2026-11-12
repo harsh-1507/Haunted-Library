@@ -1,27 +1,60 @@
 
-# Compiled object files
-*.o
+# ==========================================
+# Compiled Files
+# ==========================================
 
-# Executables
+*.o
+*.obj
+*.exe
+*.out
+
+# Game Executables
 haunted
 haunted.exe
-*.exe
 
-# User account data
+# ==========================================
+# User Data & Game Saves
+# ==========================================
+
 users.txt
-
-# Game save files
 save_*.dat
 
-# IDE and editor files
+# ==========================================
+# Windows Metadata
+# ==========================================
+
+# Windows Mark of the Web / Zone Identifier
+*Zone.Identifier*
+*:Zone.Identifier*
+*#Uf03aZone.Identifier*
+
+# Windows thumbnail and system files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ==========================================
+# macOS Metadata
+# ==========================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==========================================
+# IDE & Editor Files
+# ==========================================
+
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
-# Operating system files
-.DS_Store
-Thumbs.db
-*.Zone.Identifier
+# ==========================================
+# Temporary & Log Files
+# ==========================================
 
-# Temporary files
 *.tmp
+*.temp
 *.log
