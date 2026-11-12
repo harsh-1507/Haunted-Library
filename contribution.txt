@@ -1,0 +1,20 @@
+Contribution Report – Text-Based Adventure Game (C Project)
+
+Shubham
+- Set up the main structure of the program
+- Organized header files and managed how modules connected
+- Built most of the core systems the game runs on
+- Fixed major errors and handled compilation issues
+- Helped combine everyone’s work into the final build
+
+Yash
+- Wrote the story, branching paths, and in-game events
+- Worked on input/output so the game responds to player choices
+- Developed several interaction-based functions
+- Tested different story routes to make sure everything linked properly
+
+Harsh
+- Worked on menus, utility functions, and supporting gameplay features
+- Helped improve logic flow and clean up smaller issues
+- Assisted with testing and finding bugs
+- Contributed to refining the game as different parts were merged together

@@ -1,0 +1,27 @@
+
+# Compiled object files
+*.o
+
+# Executables
+haunted
+haunted.exe
+*.exe
+
+# User account data
+users.txt
+
+# Game save files
+save_*.dat
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.Zone.Identifier
+
+# Temporary files
+*.tmp
+*.log
