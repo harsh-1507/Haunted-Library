@@ -2,31 +2,32 @@
 
 ### 🏛️ A Text-Based Adventure Game in C
 
-**Haunted Library** is a text-based adventure game developed in C where players explore a mysterious library, solve puzzles, collect items, and uncover their way to the exit. The game combines interactive storytelling with room navigation, puzzle-solving, inventory management, and a complete user account system with multiple save slots.
+**Haunted Library** is a text-based adventure game developed in C where players explore a mysterious library, solve puzzles, collect items, and uncover their way to the exit.
 
-Built using modular C programming, the project demonstrates concepts such as structures, file handling, modular design, string processing, and persistent game-state management.
+The game combines interactive storytelling, room navigation, puzzle-solving, inventory management, and a user account system with multiple save slots. It is built using modular C programming and demonstrates concepts such as structures, file handling, string processing, and persistent game-state management.
 
 ---
 
 ## ✨ Features
 
-### 🔐 User Authentication
-- Create a new account using a username and password.
+### 🔐 User Account System
+- Create accounts using a username and password.
 - Login using registered credentials.
 - Delete accounts with password verification.
-- Username and password validation.
-- Account information stored locally in `users.txt`.
+- Username and password must contain at least 5 characters.
+- Spaces are not allowed in usernames or passwords.
+- User accounts are stored locally in `users.txt`.
 
 ### 💾 Save & Load System
 - Five independent save slots for every user.
 - Manually save and load game progress.
 - Autosave functionality through the in-game menu.
-- Each save preserves the player's game state.
-- Account deletion also removes associated save files.
+- Each save preserves the complete player state.
+- Account deletion automatically removes associated save files.
 
 ### 🧭 Exploration & Navigation
-- Navigate through different rooms using directional commands.
-- Explore interconnected areas of the library.
+- Explore eight interconnected areas of the library.
+- Move between rooms using directional commands.
 - Inspect objects and discover hidden clues.
 - Interact with objects and collect useful items.
 
@@ -37,20 +38,21 @@ Built using modular C programming, the project demonstrates concepts such as str
 - Complete the required puzzles to unlock the Exit Door.
 
 ### 🎒 Inventory Management
-- Collect and manage up to 10 items.
+- Carry up to 10 items.
+- Collect and manage items required for progression.
 - Use collected items to interact with the environment.
-- Inventory contents persist across save and load operations.
+- Inventory contents are preserved across save and load operations.
 
 ### ❤️ Health & Game Events
 - Player health system.
 - Random spooky events during gameplay.
-- Game progress depends on exploration and puzzle completion.
+- Game progression depends on exploration and puzzle completion.
 
 ---
 
 ## 🏛️ Rooms to Explore
 
-The game consists of eight interconnected areas, each containing unique interactions, clues, or puzzle elements.
+The library consists of eight interconnected areas, each containing unique interactions, clues, or puzzle elements.
 
 | Room | Description |
 |---|---|
@@ -59,7 +61,7 @@ The game consists of eight interconnected areas, each containing unique interact
 | 📦 Store Room | Search for useful items and hidden objects. |
 | 🪑 Teacher's Table | Investigate objects and uncover clues. |
 | 📽️ Projector Room | Interact with the projector-based puzzle. |
-| 🕯️ Basement | Explore a mysterious underground area. |
+| 🕯️ Basement | Explore the mysterious underground area. |
 | 📚 Archive | Discover information and solve challenges. |
 | 🔑 Exit Door | Complete the required puzzles and find your way out. |
 
@@ -70,14 +72,14 @@ The game consists of eight interconnected areas, each containing unique interact
 The project follows a modular architecture, separating different game systems into individual source and header files.
 
 ```text
-HauntedLibrary/
+Haunted-Library/
 │
 ├── main.c              # Main program and game flow
 │
 ├── auth.c              # Authentication functionality
 ├── auth.h
 │
-├── login.c             # Login and account menu
+├── login.c             # Login and account management
 ├── login.h
 │
 ├── player.c            # Player-related functionality
@@ -112,34 +114,25 @@ HauntedLibrary/
 
 - GCC compiler with C11 support.
 - Windows, Linux, or macOS.
-- Make (optional, required only if using the Makefile).
+- Make (optional, required only when using the Makefile).
 
 ### 📥 Clone the Repository
 
+Open your terminal and execute:
+
 ```bash
-git clone <repository-url>
-cd CProjGame
+git clone https://github.com/harsh-1507/Haunted-Library.git
 ```
 
-Replace `<repository-url>` with the URL of this GitHub repository.
+Navigate to the project directory:
+
+```bash
+cd Haunted-Library
+```
 
 ### 🔨 Compilation
 
-**Option 1: Compile directly using GCC**
-
-Linux / macOS:
-
-```bash
-gcc -std=c11 -O2 -Wall -Wextra main.c login.c auth.c player.c rooms.c puzzles.c save.c util.c ui.c -o haunted
-```
-
-Windows:
-
-```bash
-gcc -std=c11 -O2 -Wall -Wextra main.c login.c auth.c player.c rooms.c puzzles.c save.c util.c ui.c -o haunted.exe
-```
-
-**Option 2: Using Make**
+**Option 1: Using Make (Recommended)**
 
 If Make is installed, simply execute:
 
@@ -147,7 +140,25 @@ If Make is installed, simply execute:
 make
 ```
 
-The provided Makefile compiles the source files and generates the `haunted` executable.
+The provided Makefile automatically compiles the source files and generates the `haunted` executable.
+
+**Option 2: Using GCC Directly**
+
+If Make is unavailable, compile all source files directly.
+
+Linux / macOS:
+
+```bash
+gcc -std=c11 -O2 -Wall -Wextra main.c login.c auth.c player.c rooms.c puzzles.c save.c util.c ui.c -o haunted
+```
+
+Windows (MinGW GCC):
+
+```bash
+gcc -std=c11 -O2 -Wall -Wextra main.c login.c auth.c player.c rooms.c puzzles.c save.c util.c ui.c -o haunted.exe
+```
+
+### 🧹 Cleaning Generated Files
 
 To remove generated object files and executables:
 
@@ -155,13 +166,17 @@ To remove generated object files and executables:
 make clean
 ```
 
-To clean and rebuild:
+To clean and rebuild the project:
 
 ```bash
 make rebuild
 ```
 
-### ▶️ Running the Game
+---
+
+## ▶️ Running the Game
+
+Once compilation is successful, run the executable.
 
 **Linux / macOS:**
 
@@ -227,7 +242,7 @@ The in-game menu provides the following options:
 
 The game uses file handling to maintain user accounts and saved game progress between sessions.
 
-### User Database
+### 👤 User Database
 
 Registered users are stored in:
 
@@ -241,9 +256,9 @@ The file follows this format:
 <id>:<username>:<hash>
 ```
 
-### Save Files
+### 💾 Save Files
 
-Each user has five independent save slots.
+Each registered user has five independent save slots.
 
 Save files follow this naming convention:
 
@@ -253,36 +268,37 @@ save_user_<id>_slot_<slot>.dat
 
 Each save stores information such as:
 
-- Player's current room.
+- Current room.
 - Player health.
 - Inventory items.
 - Puzzle states.
 - Switch configurations.
 - Game completion status.
-- User and save slot information.
+- User ID and save slot information.
 
-**Note:** User database and save files are generated automatically during gameplay. They are not required in the GitHub repository.
+**Note:** User database and save files are generated automatically during gameplay and are not included in the GitHub repository.
 
 ---
 
 ## ⚠️ Known Limitations
 
 - The game currently uses a text-based interface.
-- Password characters are visible during input.
-- Usernames and passwords cannot contain spaces.
-- Terminal appearance may vary depending on the operating system and terminal configuration.
+- Password characters are visible while typing.
+- Spaces are not allowed in usernames or passwords.
+- Terminal appearance may vary depending on the operating system.
+- Colored terminal output on Windows depends on ANSI terminal support.
 
 ---
 
 ## 👨‍💻 Contributors
 
-This project was developed collaboratively.
+This project was developed collaboratively by:
 
 | Contributor | Contributions |
 |---|---|
-| **Shubham** | Main program structure, core systems, module integration and compilation fixes. |
-| **Yash** | Storyline, branching paths, in-game events and player interactions. |
-| **Harsh** | Menu systems, utility functions, gameplay improvements and testing. |
+| **Shubham** | Main program structure, core systems, module integration, header organization and compilation fixes. |
+| **Yash** | Storyline, branching paths, in-game events, input/output and interaction-based functions. |
+| **Harsh** | Menu systems, utility functions, gameplay improvements, logic refinement and testing. |
 
 For more details, refer to [contribution.txt](contribution.txt).
 
